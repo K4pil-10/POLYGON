@@ -1,0 +1,237 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Colors variable */
+
+:root {
+  --primary-gold: #e6b800;
+  --primary-glow: rgba(230, 184, 0, 0.2);
+  --bg-dark: #0a0a0c;
+  --glass-bg: rgba(18,18,24,0.65);
+  --glass-border: rbga(255, 255 ,255, 0.08);
+  --text-main: #050505;
+  --text-muted: #9ca3af;
+  --rm-blue: #1b365d;
+}
+
+body{
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+#bg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index:  -1;
+  color: var(--text-main);
+  pointer-events: auto;
+}
+
+main{
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  z-index: 1;
+  pointer-events: none;
+
+}
+
+.name, .content-box{
+  pointer-events: auto;
+}
+
+.name{
+  text-align: center;
+  margin-bottom: 5rem;
+  padding: 2rem;
+}
+.name h1{
+  font-size: 4rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  background-color: (135deg, #ffffff 30%, var(--primary-gold));
+  -webkit-background-clip: text;
+  /* -webkit-text-fill-color: transparent; */
+  text-shadow: 0 10px 30px rgba(255, 13, 13, 0.5);
+}
+
+.name .title{
+  font-size: 1.2rem;
+  color: black;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  text-shadow: 0 10px 30px rgba(255, 13, 13, 0.5);
+}
+
+.content-box{
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(0.5px);
+  -webkit-backdrop-filter: blur(0.5px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  transition: 
+    transform 0.4s cubic-bezier(0.25, 1, 0.5,1),
+    border-color 04s ease,
+    box-shadow 0.4s ease,
+    background-color 0.4s ease;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.content-box:hover{
+  transform: translateY(-8px);
+  border-color: rgba(230, 184, 0, 0.3);
+  box-shadow: 0 0 15px var(--primary-glow);
+}
+
+.content-box h2{
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  border-left: 4px solid var(--primary-gold);
+  padding-left: 0.75rem;
+}
+
+.content-box p{
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+
+.stat-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.stat-card{
+  background: rgba(63, 62, 62, 0.58);
+  border: 1px solid rgba(63, 62, 62, 0.6);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3 ease;
+}
+
+.stat-card:hover{
+  background:rgba(63, 62, 62, 0.6);
+  box-shadow: 0 0 15px var(--primary-glow);
+}
+
+.stat-card.featured{
+  background: linear-gradient(135deg, rgba(230,184,0,0,1), rgba(0, 0, 0, 0));
+  border-color: rgba(230, 184, 0, 0.4);
+  box-shadow: 0 0 15px var(--primary-glow);
+}
+
+
+.stat-card h3{
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.stat-grid{
+  display: grid;
+  grid-template-columns:  1fr 1fr;
+  gap: 1rem;
+}
+
+.stat-num{
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.stat-card.stat-card.featured.stat-num{
+  color: var(--primary-gold);
+}
+
+.stat-lbl{
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stat-highlight{
+  margin-top: 1rem;
+  font-size: 0.85rem !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--primary-gold) !important;
+}
+
+.footnote{
+  display: block;
+  margin-top: 1.5rem;
+  font-style: italic;
+  text-align: center;
+  color: var(--primary-gold) !important;
+}
+
+.content-box ul{
+  list-style: none;
+}
+
+.content-box li {
+  font-size: 1.05rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(63, 62, 62, 0.6);
+  align-items: center;
+  color: var(--text-muted);
+}
+
+.content-box li strong {
+  color: #ffffff;
+  margin-right: 0.35rem;
+}
+
+.content-box li::before{
+  content: "✦";
+  color: var(--primary-gold);
+  font-weight: bold;
+  width: 1.5rem;
+}
+
+@media (max-width:768px){
+  .name h1{
+    font-size: 2.5rem;
+  }
+
+  .name .title{
+    font-size: 1rem;
+    letter-spacing: 4px;
+  }
+
+  main{
+    padding: 2rem 1rem;
+  }
+
+  .content-box{
+    padding: 1.5rem;
+  }
+}
